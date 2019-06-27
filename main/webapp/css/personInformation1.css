@@ -1,0 +1,700 @@
+/*个人信息修改*/
+.touxiang{
+	height: 200px;
+	/*margin: 0 auto;*/
+}
+.touxiang .left{
+	display: inline-block;
+	width: 49%;
+}
+.touxiang .left img{
+	display: inline-block;
+	float: right;
+	margin-right: 75px;
+}
+.touxiang .right{
+	display: inline-block;
+	width: 49%;
+	vertical-align: top;
+	padding-top: 50px;
+}
+.touxiang .right span{
+	color: #a1a1a1;
+	font-size: 12px;
+}
+.touxiang .left img{
+	width: 120px;
+	height: 150px;
+}
+.informations div{
+	margin: 10px auto;
+	width: 90%;
+	/*display: inline-block;*/
+}
+.informations div:last-child{
+	text-align: center;
+	margin-top: 20px;
+}
+.informations div input{
+	width: 65%;
+	border: 1px solid #a1a1a1;
+	border-radius: 3px;
+	padding: 3px;
+	font-size: 14px;
+}
+.informations div input[type="submit"]{
+	width: 100px;
+	border: 1px solid #a1a1a1;
+	border-radius: 3px;
+	padding: 3px;
+}
+.informations div span{
+	display: inline-block;
+	width: 110px;
+	height: 22px;
+	line-height: 22px;
+	vertical-align: top;
+}
+.informations div .evaluation{
+	width: 65%;
+	height: 150px;
+	vertical-align: top;
+	border: 1px solid #a1a1a1;
+	border-radius: 3px;
+	padding: 3px;
+	resize: none;
+}
+.informations div p{
+	color: red;
+	margin-left: 110px;
+}
+/*个人信息修改结束*/
+
+/*用户信息*/
+.leftImg{
+	display: inline-block;
+	width: 25%;
+	margin-right: 4%;
+	vertical-align: top;
+}
+.leftImg img{
+	width: 98%;
+}
+.rightInformation{
+	display: inline-block;
+	width: 70%;
+}
+.rightInformation div{
+	height: 32px;
+	line-height: 32px;
+}
+.rightInformation div a{
+	text-decoration: none;
+	color: #FF5722;
+	font-weight: bold;
+}
+.rightInformation div:nth-child(3){
+	height: 130px;
+}
+.aboutSell{
+	margin: 50px 0;
+}
+.aboutSell table{
+	width: 100%;
+}
+.aboutSell table tr:nth-child(1){
+	width: 100%;
+	font-weight: bold;
+	/*display: inline-block;*/
+	margin-bottom: 15px;
+}
+.aboutSell table tr td:nth-child(1){
+	width: 60%;
+	overflow: hidden;
+}
+.aboutSell table tr td:nth-child(2){
+	width: 15%;
+	overflow: hidden;
+}
+.aboutSell table tr td:nth-child(3){
+	width: 20%;
+	overflow: hidden;
+}
+.aboutSell table tr td:nth-child(3) a{
+	color: #FF5722;
+}
+.comment{
+	margin: 50px 0;
+}
+.comment table{
+	width: 100%;
+}
+.comment table tr{
+	width: 100%;
+}
+.comment table tr:nth-child(1){
+	font-weight: bold;
+}
+.comment table tr td:nth-child(1){
+	width: 75%;
+	overflow: hidden;
+}
+.comment table tr td:nth-child(2){
+	width: 22%;
+	overflow: hidden;
+}
+/*用户信息结束*/
+
+/*关于星星*/
+.star-rating {
+    font-family: 'FontAwesome';
+    margin: 10px auto;
+}
+.star-rating span{
+	display: inline-block;
+	height: 32px;
+	line-height: 32px;
+	vertical-align: top;
+}
+.star-rating > fieldset {
+  border: none;
+  display: inline-block;
+}
+.star-rating > fieldset:not(:checked) > input {
+  position: absolute;
+  top: -9999px;
+  clip: rect(0, 0, 0, 0);
+}
+.star-rating > fieldset:not(:checked) > label {
+  float: right;
+  width: 1em;
+  padding: 0 .05em;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+  font-size: 200%;
+  color: #FDE413;/*滑动之前的颜色*/
+}
+.star-rating > fieldset:not(:checked) > label:before {
+  content: '\f006  ';
+}
+.star-rating > fieldset > input:checked ~ label:before {
+  content: '\f005  ';
+}
+/*关于星星结束*/
+ .good-img{
+        position: relative;
+        width: 80%;
+        margin:0 10% 0 10%;
+        height: 300px;
+        
+    }
+  .good-big-img{
+  	position: relative;
+  	float: left;
+  	width: 30%;
+  	height: 200px;
+  	margin:50px 10% 50px 10%;
+  	
+  }
+  .good-little-img{
+  	position: relative;
+  	float: left;
+  	width: 50%;
+  	height: 200px;
+  	margin: 50px 0 50px 0;
+  }
+  .word{
+  	position: relative;
+  	/*float: left;*/
+  	width: 100%;
+  	height: 50px;
+  	font-family: "微软雅黑";
+  	font-size: 20px;
+  }
+  .little-img{
+  	position: relative;
+  	float: left;
+  	width: 100%;
+  	height: 200px;
+  }
+  .img{
+  	width: 15%;
+  	height: 100px;
+  	margin:0px 7% 30px 0;
+  	position: relative;
+  	float: left;
+  }
+  .describe{
+  	position: relative;
+	width: 65%;
+	margin: 0px 15% 0 18%;
+	height: 500px;
+  }
+  .all{
+	position: relative;
+	width: 100%;
+	height: 1000px;
+}
+.head{
+	position: relative;
+	width:100%;
+	height: 5%;
+	background-color: #A4D3EE;
+}
+.title{
+	position: relative;
+	width: 100%;
+	height:130px;
+}
+.head-link-left{
+	position: relative;
+	float: left;
+	width: 9%;
+	margin-top: 1%;
+}
+.head-link-right-1{
+	position: relative;
+	float: left;
+	margin-left: 40%;
+	width: 9%;
+	margin-top: 1%;
+}
+.head-link-right{
+	position: relative;
+	float: left;
+	width: 9%;
+	margin-top: 1%;
+}
+a:link{
+	color: black;
+	text-decoration: none;
+}
+a:hover{
+	color: black;
+	text-decoration: none;
+}
+.img{
+	width: 15%;
+	height: 15%;
+	position: relative;
+	float: left;
+	/*margin-right: 5px;
+	margin-left: 10%;
+	border-right: 2px solid #8D8585CC;
+	margin-top: 10px;*/
+}
+.word{
+	width: 100%;
+	height: 55px;
+	position: relative;
+	float: left;
+	font-size: 20px;
+	color: black;
+}
+.name{
+	position: relative;
+	font-size: 20px;
+
+
+}
+.Isnew{
+position: relative;
+	font-size: 20px;
+	margin-top: 20px;
+
+}
+.money{
+	margin-top: 20px;
+	position: relative;
+	font-size: 20px;
+
+}
+.talk{
+	margin-top: 20px;
+	position: relative;
+	font-size: 20px;
+}
+.way{
+	margin-top: 20px;
+	position: relative;
+	font-size: 20px;
+
+}
+.type{
+	margin-top: 20px;
+	position: relative;
+	font-size: 20px;
+
+}
+.image{
+	margin-top: 20px;
+	position: relative;
+	font-size: 20px;
+	height: 200px;
+
+}
+.wenzi{
+	position: relative;
+	float: left;
+	font-size: 20px;
+
+}
+.img-right{
+	position: relative;
+	float: left;
+	margin-left: 10%;
+}
+.detail{
+	margin-top: 20px;
+	position: relative;
+	font-size: 20px;
+
+}
+.body{
+	width: 60%;
+	margin-right: 10%;
+	margin-left:32%;
+}
+input[type="text"] {
+    /*outline: 0;*/
+    padding: 10px 12px;
+    /*border-radius: 0px;*/
+    border: 2px solid black;
+    /*background-color: rgba(31, 248, 255, 0.59);*/
+    /*background-color: #F9F6F600;*/
+    /*color: #0c0b0b;*/
+    width: 50%;
+    /*letter-spacing: 1px;*/
+    font-size: 15px;
+}
+.half{
+	 outline: 0;
+    padding: 10px 12px;
+    border-radius: 0px;
+    border: solid;
+    color: #0c0b0b;
+    width: 15%;
+    letter-spacing: 1px;
+    font-size: 15px;
+}
+div select{
+	width: 49%;
+	height: 40px;
+	border: 2px solid;
+	font-size: 20px;
+}
+.botton{
+	width: 100%;
+	margin-left: 30%;
+	position: relative;
+}
+/*input[type="button"] {
+   display: inline-block;
+    padding: .3em .5em;
+    background-image: linear-gradient(#ddd, #bbb);
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: .3em;
+    box-shadow: 0 1px white inset;
+    text-align: center;
+    text-shadow: 0 1px 1px black;
+    color:white;
+    font-weight: bold;
+    width: 100px;
+    height: 50px;
+}*/
+input[type="button"]{
+	background: #4477a1;            
+    background: -webkit-gradient(linear, left top, left bottom, from(#81a8cb), to(#4477a1) );            
+    background: -moz-linear-gradient(-90deg, #81a8cb, #4477a1);            
+    filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#81a8cb', endColorstr='#4477a1');
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    text-shadow: 0 1px 1px black;
+    color:white;
+    font-weight: bold;
+    font-size: 15px;
+		}
+input[type="button"]:active {
+			background: #4477a1;  
+		}
+input[type="button"]:hover{
+	background: #81a8cb;            
+    background: -webkit-gradient(linear, left top, left bottom, from(#4477a1), to(#81a8cb) );            
+    background: -moz-linear-gradient(-90deg, #4477a1, #81a8cb);            
+    filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#4477a1', endColorstr='#81a8cb');   
+}
+ .talk_con{
+            width:100%;
+            height:500px;
+            border:1px solid #666;
+            margin:0px auto 0;
+            background:#f9f9f9;
+        }
+        .talk_show{
+            width:90%;
+            height:420px;
+            border:1px solid #666;
+            background:#fff;
+            margin:30px auto 0;
+            overflow:auto;
+        }
+        .talk_input{
+            width:90%;
+            margin:10px auto 0;
+            height: 100px;
+        }
+        .whotalk{
+            width:80px;
+            height:30px;
+            float:left;
+            outline:none;
+        }
+        .talk_word{
+            width:420px;
+            height:26px;
+            padding:0px;
+            float:left;
+            margin-left:0px;
+            outline:none;
+            text-indent:10px;
+        }        
+        .talk_sub{
+            width:56px;
+            height:30px;
+            float:left;
+            margin-left:10px;
+        }
+        .atalk{
+           margin:10px; 
+        }
+        .atalk span{
+            display:inline-block;
+            background:#0181cc;
+            border-radius:10px;
+            color:#fff;
+            padding:5px 10px;
+        }
+        .btalk{
+            margin:10px;
+            text-align:right;
+        }
+        .btalk span{
+            display:inline-block;
+            background:#ef8201;
+            border-radius:10px;
+            color:#fff;
+            padding:5px 10px;
+        }
+        .1{
+        	position: relative;
+        	float: left;
+        }
+        .2{
+        	position: relative;
+        	float: left;
+        }
+.aboutNew table tr td:nth-child(1){
+	width: 15%;
+	overflow: hidden;
+}
+.aboutNew table tr td:nth-child(2){
+	width: 70%;
+	max-width: 50px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+/*说明：
+
+white-space: nowrap 保证文本内容不会自动换行，如果多余的内容会在水平方向撑破单元格。
+
+overflow: hidden 隐藏超出单元格的部分。
+
+text-overflow: ellipsis 将被隐藏的那部分用省略号代替。*/
+
+.aboutNew table tr td:nth-child(3){
+	width: 10%;
+	overflow: hidden;
+	margin-left: 100px;
+}
+.aboutNew table tr td:nth-child(3) a{
+	color: #FF5722;
+}
+.aboutNew a{
+	color: black;
+}
+.aboutNew a:hover{
+	color: red;
+}
+.header ul li{
+	margin-left: 30px;
+}
+.operator-people{
+	width: 80%;
+	height: 620px;
+	margin: 0 10% 0 10%;
+}
+.people{
+	border: 2px;
+	border-color: black;
+	margin:0 20% 0 20%;
+	text-align: center;
+}
+.people table  td:nth-child(1){
+	width: 15%;
+	overflow: hidden;
+}
+.people table  td:nth-child(2){
+	width: 60%;
+	overflow: hidden;
+}
+.people table  td:nth-child(3){
+	width: 15%;
+	overflow: hidden;
+}
+.people a{
+	color: black;
+}
+.people a:hover{
+	color: #EE6A50;
+}
+.search{
+	position: relative;
+	/*float: right;*/
+	margin-left: 50%;
+	margin-bottom: 20px;
+
+}
+.biaodan{
+	width: 100%;
+	margin-right: 0%;
+}
+.biaodan input[type="text"]:{
+	text-align: center;
+	width: 300px;
+}
+.little-foot{
+	position: relative;
+	margin-right: 20px;
+	background-color:#6495ed;
+	width:60px;
+	height: 30px;
+	float: left;
+	border:solid;
+	margin-top: 12px;
+	border:2px solid #287680;
+	text-align: center;
+	margin-bottom: 10px;
+}
+.big-foor{
+	position: relative;
+	float: left;
+	margin-bottom: 20px;
+	margin-left: 30%;
+	
+}
+.little-foot-1{
+	position: relative;
+	margin-right: 20px;
+	margin-left: 52%;
+	background-color: #6495ed;
+	width:60px;
+	height: 30px;
+	float: left;
+	border:2px solid #287680;
+	margin-top:12px;
+	text-align: center;
+}
+.good-describe{
+	position: relative;
+	float: left;
+	width: 100%;
+	height: auto;
+}
+.good-pingjia{
+	width: 100%;
+	position: relative;
+	float: left;
+}
+.pingjia1{
+	width: 100%;
+	position: relative;
+	float: left;
+	font-size: 20px;
+    color: black;
+    margin-top: 20px;
+}
+.pingjia2{
+	width: 100%;
+	position: relative;
+	height: auto;
+	float: left;
+	font-size: 15px;
+	color: black;
+	margin-top: 20px;
+}
+.pingjia3{
+	width: 20%;
+	height: auto;
+	float: left;
+	position: relative;
+	margin-left: 55%;
+	color: black;
+}
+.pingjia4{
+	width: 20%;
+	height: auto;
+	float: left;
+	position: relative;
+	margin-left: 5%;
+	color: black;
+}
+.pingjia5{
+	margin-top: 20px;
+	width: 100%;
+	height: 100px;
+	position: relative;
+	float: left;
+	color: black;
+}
+.copy-right-1 {
+    text-align: center;
+    padding: 15px 0;
+    background: #FF5722;
+    height: 70px;
+    position: relative;
+    margin-bottom: 0;
+
+}
+.copy-right-1 p {
+    color: black;
+    letter-spacing: 2px;
+    font-size: 15px;
+    width: 80%;
+    margin-top: 0;
+    height: auto;
+    margin-left: 10%;
+
+}
+.copy-right-1 p a{
+    color: #fff;
+}
+.copy-right-1 p a:hover{
+    color: #f44336;
+}
+.one{
+	width: 100%;
+	position: relative;
+	float: left;
+	height: auto;
+}
+.contain-1{
+	position: relative;
+	float: left;
+	width: 40%;
+	margin: 0% 30% 30% 30%;
+	color: #fff;
+}

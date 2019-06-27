@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- spring mail begin ############################################## -->
+
+	<!-- 邮件认证实现 -->
+	<bean id="smtpAuthenticator" class="service.SmtpAuthenticator">
+		<constructor-arg value="1191235915@qq.com"></constructor-arg>
+		<constructor-arg value="yodftgyrigfcibde"></constructor-arg>
+	</bean>
+	<!-- 邮件 mailSession -->
+	<bean id="mailSession" class="javax.mail.Session" factory-method="getInstance">
+		<constructor-arg>
+			<props>
+				<prop key="mail.smtp.auth">true</prop>
+				<prop key="mail.smtp.socketFactory.port">465</prop>
+				<prop key="mail.smtp.socketFactory.class">javax.net.ssl.SSLSocketFactory</prop>
+				<prop key="mail.smtp.socketFactory.fallback">false</prop>
+			</props>
+		</constructor-arg>
+		<constructor-arg ref="smtpAuthenticator" />
+	</bean>
+
+	<!-- email发送 -->
+
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host" value="smtp.qq.com" />
+		<property name="port" value="465" />
+		<property name="session" ref="mailSession" />
+	</bean>
+
+</beans>

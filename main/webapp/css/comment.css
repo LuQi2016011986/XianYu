@@ -1,0 +1,87 @@
+﻿.star-rating {
+  font-family: 'FontAwesome';
+  /*margin: 50px auto;*/
+  display: inline-block;
+}
+.star-rating > fieldset {
+  border: none;
+  display: inline-block;
+}
+.star-rating > fieldset:not(:checked) > input {
+  position: absolute;
+  top: -9999px;
+  clip: rect(0, 0, 0, 0);
+}
+.star-rating > fieldset:not(:checked) > label {
+  float: right;
+  width: 1em;
+  padding: 0 .05em;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+  font-size: 200%;
+  color: #FDE413;/*滑动之前的颜色*/
+}
+.star-rating > fieldset:not(:checked) > label:before {
+  content: '\f006  ';
+}
+.star-rating > fieldset:not(:checked) > label:hover,
+.star-rating > fieldset:not(:checked) > label:hover ~ label {
+  color: #FDE413;
+  text-shadow: 0 0 3px #FDE413;
+}
+.star-rating > fieldset:not(:checked) > label:hover:before,
+.star-rating > fieldset:not(:checked) > label:hover ~ label:before {
+  content: '\f005  ';
+}
+.star-rating > fieldset > input:checked ~ label:before {
+  content: '\f005  ';
+}
+.out-pingfen{
+  margin-bottom: 30px;
+}
+.pingfen{
+  vertical-align: top;
+  font-size: 20px;
+  display: inline-block;
+  height: 46px;
+  line-height: 46px;
+}
+.contact .notice-content{
+  min-height: 0;
+}
+.comment div{
+  display: inline-block;
+  height: 200px;
+}
+.comment textarea{
+  font-size: 18px;
+  height: 99%;
+}
+.comment span{
+  vertical-align: top;
+  font-size: 20px;
+}
+.contact-w3l{
+  margin-bottom: 192px;
+}
+#outta span{
+  font-size: 18px;
+  color: #ccc;
+  display: inline-block;
+  float: right;
+  margin-right: 15px;
+}
+#outta:after{
+  display: block;
+  content: "";
+  clear: both;
+  height: 0;
+}
+.contact-form.wthree{
+  padding-bottom: 50px;
+}
+#nrtijiao{
+  display: block;
+  margin: 30px auto 0 auto;
+}

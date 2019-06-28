@@ -9,7 +9,6 @@ import entity.Message;
 import entity.Order;
 import entity.Page;
 
-
 /**
  * 调用ProductDao的方法
  *
@@ -43,7 +42,10 @@ public class ProductService {
 		}
 	}
 
-	// 查询所有商品
+	
+	/** 
+     * 查询所有商品
+     */  
 	public List<Goods> findAll() {
 		try {
 			return pDao.findAll();
@@ -60,6 +62,9 @@ public class ProductService {
 		}
 	}
 
+	/** 
+     * 查找类型
+     */  
 	public List<Goods> findType() {
 		try {
 			return pDao.findType();
@@ -68,6 +73,9 @@ public class ProductService {
 		}
 	}
 
+	/** 
+     * 查询商品
+     */  
 	public List<Goods> findGoods() {
 		try {
 			return pDao.findGoods();
@@ -76,7 +84,10 @@ public class ProductService {
 		}
 	}
 
-	// 查看某一商品
+	
+	/** 
+     * 查看某一商品
+     */   
 	public List<Goods> findById(String id) {
 		try {
 			return pDao.findProductById(id);
@@ -85,6 +96,9 @@ public class ProductService {
 		}
 	}
 
+	/** 
+     * 通过id查询订单
+     */   
 	public List<Order> findOrById(String id) {
 		try {
 			return pDao.findOrderById(id);
@@ -115,7 +129,9 @@ public class ProductService {
 		}
 	}
 
-	// 评论分页
+	/** 
+     * 评论分页
+     */   
 	public Page queryByPage1(int pageCode, int id) {
 		try {
 			// 获取总记录数
@@ -132,7 +148,9 @@ public class ProductService {
 		}
 	}
 
-	// 商品种类分页
+	/** 
+     *  商品种类分页
+     */   
 	public Page queryByPage2(int pageCode, String type) {
 		try {
 			// 获取总记录数
@@ -149,6 +167,9 @@ public class ProductService {
 		}
 	}
 
+	/** 
+     *  商品是否打折分页
+     */   
 	public Page queryByPage3(int pageCode, String barterType) {
 		try {
 			// 获取总记录数
@@ -165,6 +186,9 @@ public class ProductService {
 		}
 	}
 
+	/** 
+     *  所有商品分页查询
+     */   
 	public Page queryProByPage(int pageCode) {
 		try {
 			// 获取总记录数

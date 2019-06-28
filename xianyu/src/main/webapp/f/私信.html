@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>私信</title>
+<!--/tags -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords"
+	content="Grocery Shoppy Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<!--//tags -->
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css"
+	media="all" />
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/personInformation.css" rel="stylesheet" type="text/css"
+	media="all" />
+<link href="css/font-awesome.css" rel="stylesheet">
+<!--pop-up-box-->
+<link href="css/popuo-box.css" rel="stylesheet" type="text/css"
+	media="all" />
+<!--//pop-up-box-->
+<!-- price range -->
+<link rel="stylesheet" type="text/css" href="css/jquery-ui1.css">
+<!-- fonts -->
+<link
+	href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800"
+	rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href="css/notice.css">
+<script type="text/javascript">
+	window.onload = function() {
+		var Words = document.getElementById("words");
+		var Who = document.getElementById("who");
+		var TalkWords = document.getElementById("talkwords");
+		var TalkSub = document.getElementById("talksub");
+
+
+		TalkSub.onclick = function() {
+			//定义空字符串
+			var str = "";
+			if (TalkWords.value == "") {
+				// 消息为空时弹窗
+				alert("消息不能为空");
+				return;
+			}
+			if (Who.value == 0) {
+				//如果Who.value为0n那么是 A说
+				str = '<div class="atalk"><span>A说 :' + TalkWords.value + '</span></div>';
+			} else {
+				str = '<div class="btalk"><span>B说 :' + TalkWords.value + '</span></div>';
+			}
+			// 将之前的内容与要发的内容拼接好 提交
+			Words.innerHTML = Words.innerHTML + str;
+		}
+
+	}
+</script>
+</head>
+
+<body>
+	<!-- header-bot-->
+	<div class="header-bot">
+		<div class="header-bot_inner_wthreeinfo_header_mid">
+			<!-- header-bot-->
+			<div class="col-md-3 logo_agile">
+				<h1>
+					<a href="index.html"> <!-- <span>G</span>rocery
+						<span>S</span>hoppy --> <img style="width: 300px;"
+						src="images/logo.png" alt=" ">
+					</a>
+				</h1>
+			</div>
+			<!-- header-bot -->
+			<div class="col-md-5">
+				<ul class="w3_short">
+					<li><a href="主页.html">Home</a> <i>|</i></li>
+					<li>私信</li>
+				</ul>
+			</div>
+			<div class="col-md-4 header">
+				<!-- header lists -->
+				<ul>
+					<li><span>欢迎您，<a href="">XXX</a></span></li>
+				</ul>
+				<!-- //header lists -->
+				<div class="clearfix"></div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<!-- //header-bot -->
+	<!-- contact page -->
+	<div class="contact-w3l">
+		<div class="container">
+			<!-- tittle heading -->
+			<h3 class="tittle-w3l">
+				嗨，小主~ <span class="heading-style"> <i></i> <i></i> <i></i>
+				</span>
+			</h3>
+			<!-- tittle heading -->
+			<!-- contact -->
+			<div class="contact agileits">
+				<div class="contact-agileinfo">
+					<div class="contact-form wthree">
+						<div class="talk_con">
+							<div class="talk_show" id="words">
+								<div class="atalk">
+									<span id="asay">A说：吃饭了吗？</span>
+								</div>
+								<div class="btalk">
+									<span id="bsay">B说：还没呢，你呢？</span>
+								</div>
+							</div>
+							<div class="talk_input">
+								<div class="1">
+									<input type="text" class="talk_word" id="talkwords">
+									<input type="button" value="发送" class="talk_sub" id="talksub"
+										style="margin-left:200px;">
+								</div>
+								<div class="2">
+									
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- //contact -->
+		</div>
+	</div>
+
+	<!-- copyright -->
+	<div class="copy-right down">
+		<div class="container">
+			<p>© 2018 软件工程导论 · 校内闲鱼制作组制作</p>
+		</div>
+	</div>
+	<!-- //copyright -->
+
+</body>
+
+</html>

@@ -80,15 +80,18 @@ public class upload extends HttpServlet {
 		response.setContentType("text/html;charset=utf-8");
 		String flag = request.getParameter("flag");
 		switch (flag) {
-		case "updateUser"://ĞŞ¸ÄÓÃ»§ĞÅÏ¢
+		case "updateUser"://ä¿®æ”¹ç”¨æˆ·ä¿¡æ¯
 			updateUser(request, response);
 			break;
-		case "active"://¼¤»îÓÊÏä
+		case "active"://æ¿€æ´»é‚®ç®±
 			active(request, response);
 			break;
 		}
 	}
 
+	/** 
+     * æ›´æ–°ç”¨æˆ·ä¿¡æ¯
+     */ 
 	public static void updateUser(HttpServletRequest request, HttpServletResponse response)
 			throws UnsupportedEncodingException {
 		String oldpassword = null, password = null, telephone = null, userIntroduction = null;
@@ -98,20 +101,20 @@ public class upload extends HttpServlet {
 		oldpassword = multipartRequest.getParameter("oldpassword");
 		HttpServletRequest req = (HttpServletRequest) request;
 		HttpSession session = req.getSession(true);
-		// ´ÓsessionÀïÈ¡µÄÓÃ»§ÃûĞÅÏ¢
+		// ä»sessioné‡Œå–çš„ç”¨æˆ·åä¿¡æ¯
 		String name = (String) session.getAttribute("name");
 		UsersService s = new UsersService();
 		Users n1 = new Users();
 		try {
-			n1 = s.check2(name, oldpassword);// È·ÈÏÓÃ»§ĞÅÏ¢
-			if (n1 != null) {// ÓÃ»§ĞÅÏ¢ÕıÈ·
+			n1 = s.check2(name, oldpassword);// ç¡®è®¤ç”¨æˆ·ä¿¡æ¯
+			if (n1 != null) {// ç”¨æˆ·ä¿¡æ¯æ­£ç¡®
 				password = multipartRequest.getParameter("password");
 				telephone = multipartRequest.getParameter("telephone");
 				userIntroduction = multipartRequest.getParameter("userIntroduction");
 				if (password == null || password.equals("")) {
 					password = oldpassword;
 				}
-				String sqlPath = null;// Í¼Æ¬ÉÏ´«
+				String sqlPath = null;// å›¾ç‰‡ä¸Šä¼ 
 				if (file != null) {
 					String filename = file.getOriginalFilename();
 					String trueFileName = String.valueOf(System.currentTimeMillis()) + filename;
@@ -142,7 +145,7 @@ public class upload extends HttpServlet {
 				try {
 					s.updateUsers(n1);
 					try {
-						response.getWriter().print("<script language='javascript'>alert('ĞŞ¸Ä³É¹¦');</script>");
+						response.getWriter().print("<script language='javascript'>alert('ä¿®æ”¹æˆåŠŸ');</script>");
 						response.setHeader("refresh", "1,URL=UserServlet?flag=readUser&m=1");
 					} catch (IOException e) {
 						// TODO Auto-generated catch block
@@ -152,9 +155,9 @@ public class upload extends HttpServlet {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-			} else {// ÓÃ»§ĞÅÏ¢´íÎó£¬²»ÔÊĞíĞŞ¸Ä
+			} else {// ç”¨æˆ·ä¿¡æ¯é”™è¯¯ï¼Œä¸å…è®¸ä¿®æ”¹
 				try {
-					response.getWriter().print("<script language='javascript'>alert('ÃÜÂë´íÎó£¬ĞŞ¸ÄÊ§°Ü');</script>");
+					response.getWriter().print("<script language='javascript'>alert('å¯†ç é”™è¯¯ï¼Œä¿®æ”¹å¤±è´¥');</script>");
 					response.setHeader("refresh", "1,URL=f/person_change_information.jsp");
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
@@ -168,6 +171,9 @@ public class upload extends HttpServlet {
 
 	}
 
+	/** 
+     * é€šè¿‡é‚®ç®±ï¼Œæ¿€æ´»æ“ä½œ
+     */ 
 	public static void active(HttpServletRequest request, HttpServletResponse response)
 			throws UnsupportedEncodingException {
 		String nenuName = request.getParameter("nenuName");
@@ -178,14 +184,14 @@ public class upload extends HttpServlet {
 			n1 = (Users) s.active(nenuName, active);
 			if (n1 != null) {
 				try {
-					response.getWriter().print("<script language='javascript'>alert('¼¤»î³É¹¦£¡');</script>");
+					response.getWriter().print("<script language='javascript'>alert('æ¿€æ´»æˆåŠŸï¼');</script>");
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			} else {
 				try {
-					response.getWriter().print("<script language='javascript'>alert('¼¤»îÊ§°Ü£¬ÇëÁªÏµ¿Í·ş¸ü¸ÄÓÊÏä£¡');</script>");
+					response.getWriter().print("<script language='javascript'>alert('æ¿€æ´»å¤±è´¥ï¼Œè¯·è”ç³»å®¢æœæ›´æ”¹é‚®ç®±ï¼');</script>");
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();

@@ -66,6 +66,9 @@ public class ProductServlet extends HttpServlet {
 
 	}
 
+	/** 
+     * 查询评论
+     */  
 	public void queryComment(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		int pageCode = 1;
@@ -80,6 +83,9 @@ public class ProductServlet extends HttpServlet {
 		request.getRequestDispatcher("f/comment.jsp").forward(request, response);
 	}
 
+	/** 
+     * 通过id查询商品
+     */ 
 	public void findById(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String id = request.getParameter("goodsId");
@@ -98,6 +104,9 @@ public class ProductServlet extends HttpServlet {
 		request.getRequestDispatcher("f/detail.jsp").forward(request, response);
 	}
 
+	/** 
+     * 分页查询商品
+     */ 
 	public void queryProduct(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		int pageCode = 1;
@@ -111,14 +120,17 @@ public class ProductServlet extends HttpServlet {
 		request.getRequestDispatcher("admin/manage.jsp").forward(request, response);
 	}
 
+	/** 
+     * 发送私信
+     */ 
 	public void addMessage(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String initiatorName = request.getParameter("initiatorName");
 		String recipientName = request.getParameter("recipientName");
-		System.out.println(initiatorName + "xx");
-		System.out.println(recipientName + "1xx");
+		//System.out.println(initiatorName + "xx");
+		//System.out.println(recipientName + "1xx");
 		String content = request.getParameter("content");
-		System.out.println(content);
+		//System.out.println(content);
 		String id = UUID.randomUUID().toString().replaceAll("-", "");
 		Date date = new Date();
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -139,6 +151,7 @@ public class ProductServlet extends HttpServlet {
 		ps.addMessage(m);
 		try {
 			Users u = a.queryUsers(recipientName);
+			System.out.println("pppp"+u.getActive());
 			if (u.getActive() == "1" || u.getActive().equals("1")) {
 				String email = u.getMail();
 				String subject1 = "校内闲鱼接收私信提醒~";
@@ -166,6 +179,9 @@ public class ProductServlet extends HttpServlet {
 
 	}
 
+	/** 
+     * 查询收到的私信
+     */ 
 	public void queryMessage(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String initiatorName = request.getParameter("initiatorName");

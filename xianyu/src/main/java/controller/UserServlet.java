@@ -99,6 +99,9 @@ public class UserServlet extends HttpServlet {
 	 * @throws ServletException
 	 *             if an error occurs
 	 */
+	/** 
+     * 管理用户
+     */ 
 	public static void manage(HttpServletRequest request, HttpServletResponse response) {
 		UsersService s = new UsersService();
 		String p2 = request.getParameter("p1");
@@ -121,6 +124,9 @@ public class UserServlet extends HttpServlet {
 		response.setHeader("refresh", "1,URL=admin/manage_user.jsp");
 	}
 
+	/** 
+     * 封号
+     */ 
 	public static void delUser(HttpServletRequest request, HttpServletResponse response) throws ServletException {
 		String name = null;
 		if (request.getParameter("name") != null && !request.getParameter("name").equals("")) {
@@ -139,6 +145,9 @@ public class UserServlet extends HttpServlet {
 		}
 	}
 
+	/** 
+     * 读取用户信息
+     */ 
 	public static void readUser(HttpServletRequest request, HttpServletResponse response) throws ServletException {
 		String name = (String) request.getParameter("userName");
 		UsersService s = new UsersService();
@@ -163,6 +172,9 @@ public class UserServlet extends HttpServlet {
 
 	}
 
+	/** 
+     * 查询用户信息
+     */ 
 	public static void queryUser(HttpServletRequest request, HttpServletResponse response) throws ServletException {
 		String name = null;
 		if (request.getParameter("name") != null && !request.getParameter("name").equals("")) {

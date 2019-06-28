@@ -141,8 +141,38 @@ public class Usersdao {
 		try {
 			Object params = userId;
 			qr.update(conn, sql, params);// 加入黑名单
-			sql = "DELETE FROM user WHERE userId=?";
-			qr.update(conn, sql, params);// 删除用户信息阻止登录
+			String sql1 = "DELETE FROM user WHERE userId=?";
+			qr.update(conn, sql1, params);// 删除用户信息阻止登录
+		} catch (SQLException e) {
+			e.printStackTrace();// TODO: handle exception
+		} finally {
+			conn.close();
+		}
+	}
+	
+	public void deleteU(String userId) throws SQLException {
+		Connection conn = JDBCUtil.getDataSource().getConnection();
+		QueryRunner qr = new QueryRunner();
+		try {
+			Object[] params = { userId };
+			String sql1 = "DELETE FROM user WHERE userId=?";
+			qr.update(conn, sql1, params);// 删除用户信息阻止登录
+			System.out.println("p0ppp");
+		} catch (SQLException e) {
+			e.printStackTrace();// TODO: handle exception
+		} finally {
+			conn.close();
+		}
+	}
+	
+	public void deleteU1(String userId) throws SQLException {
+		Connection conn = JDBCUtil.getDataSource().getConnection();
+		QueryRunner qr = new QueryRunner();
+		try {
+			Object[] params = { userId };
+			String sql1 = "DELETE FROM black WHERE userId=?";
+			qr.update(conn, sql1, params);// 删除用户信息阻止登录
+			System.out.println("hhhhhhhh");
 		} catch (SQLException e) {
 			e.printStackTrace();// TODO: handle exception
 		} finally {

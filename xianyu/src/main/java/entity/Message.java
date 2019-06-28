@@ -2,6 +2,9 @@ package entity;
 
 import java.util.Date;
 
+/** 
+ *  消息类
+ */   
 public class Message {
 	private String id;
 	private String initiatorName;

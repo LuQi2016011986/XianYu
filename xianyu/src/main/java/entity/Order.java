@@ -1,5 +1,8 @@
 package entity;
 
+/** 
+ *  订单类
+ */   
 public class Order {
     public String orderId;
     public int state;

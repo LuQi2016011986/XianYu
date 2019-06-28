@@ -132,7 +132,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!-- copyright -->
 	<div class="copy-right">
 		<div class="container">
-			<p>© 2018 软件工程导论 · 校内闲鱼制作组制作</p>
+			<p>© 2019 软件质量保证与测试 · 校内闲鱼制作组制作</p>
 		</div>
 	</div>
 	<!-- //copyright -->

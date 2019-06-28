@@ -90,7 +90,7 @@
 							method="post">
 							<div class="out-pingfen">
 								<span class="pingfen">交易评分：</span>
-								<div class="star-rating">
+								<div class="star-rating" style="font-family:'FontAwesome';display:inline-block;">
 									<fieldset>
 										<input type="radio" id="star5" name="score" value="5" /><label
 											for="star5" title="非常好">5 stars</label> <input type="radio"
@@ -124,7 +124,7 @@
 	<!-- copyright -->
 	<div class="copy-right down">
 		<div class="container">
-			<p>© 2018 软件工程导论 · 校内闲鱼制作组制作</p>
+			<p>© 2019 软件质量保证与测试 · 校内闲鱼制作组制作</p>
 		</div>
 	</div>
 	<!-- //copyright -->

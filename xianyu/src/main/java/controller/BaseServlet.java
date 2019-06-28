@@ -2,6 +2,7 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.Writer;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -53,41 +54,37 @@ public class BaseServlet extends HttpServlet {
 		response.setContentType("text/html;charset=utf-8");
 		try {
 			String flag = request.getParameter("flag");
-			// 登录
-			// 管理员登录
-			// 退出
-			// 注册
-			// 用户名是否存在
-			if ("login".equals(flag)) {
+			switch (flag) {
+			case "login":// 登录
 				login(request, response);
-
-			} else if ("loginAdministrator".equals(flag)) {
+				break;
+			case "loginAdministrator":// 管理员登录
 				loginAdministrator(request, response);
-
-			} else if ("safeOut".equals(flag)) {
+				break;
+			case "safeOut":// 退出
 				safeOut(request, response);
-
-			} else if ("register".equals(flag)) {
+				break;
+			case "register":// 注册
 				register(request, response);
-
-			} else if ("ifExit".equals(flag)) {
+				break;
+			case "ifExit":// 用户名是否存在
 				ifExit(request, response);
-
-			} else if ("findType".equals(flag)) {
+				break;
+			case "findType":
 				findType(request, response);
-
-			} else if ("1".equals(flag)) {
+				break;
+			case "1":
 				findAll(request, response);
-
-			} else if ("2".equals(flag)) {
+				break;
+			case "2":
 				this.queryBarterType(request, response);
-
-			} else if ("6".equals(flag)) {
+				break;
+			case "6":
 				this.queryType(request, response);
-
-			} else if ("7".equals(flag)) {
+				break;
+			case "7":
 				this.FuzzyQuery(request, response);
-
+				break;
 			}
 		} catch (Exception e) {
 		}
@@ -103,6 +100,9 @@ public class BaseServlet extends HttpServlet {
 		doPost(request, response);
 	}
 
+	/** 
+     * 注册操作，并进行邮箱验证
+     */  
 	public static void register(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		HttpServletRequest req = (HttpServletRequest) request;
@@ -160,6 +160,9 @@ public class BaseServlet extends HttpServlet {
 		}
 	}
 
+	/** 
+     * 登录，获取首页信息
+     */  
 	public static void login(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String name = request.getParameter("name");
@@ -185,6 +188,8 @@ public class BaseServlet extends HttpServlet {
 				request.getSession().setAttribute("name", user.getUserName());
 				request.getSession().setAttribute("password", user.getPassword());
 				user = n.login(name, date);// 修改登录时间
+				//System.out.println("BaseServlet?flag=findType");
+				//response.setHeader("refresh", "1,URL=BaseServlet?flag=findType");
 				request.getRequestDispatcher("BaseServlet?flag=findType").forward(request, response);
 				// response.setHeader("refresh",
 				// "1,URL=ProductServlet?method=4");
@@ -203,6 +208,9 @@ public class BaseServlet extends HttpServlet {
 		}
 	}
 
+	/** 
+     * 管理员登录
+     */  
 	public static void loginAdministrator(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String name = request.getParameter("name");
@@ -237,11 +245,17 @@ public class BaseServlet extends HttpServlet {
 		}
 	}
 
+	/** 
+     * 退出
+     */  
 	public void safeOut(HttpServletRequest request, HttpServletResponse response) {
 		request.getSession().invalidate();
 		response.setHeader("refresh", "0,URL=login.jsp");
 	}
 
+	/** 
+     * 查询是否退出
+     */  
 	public static void ifExit(HttpServletRequest request, HttpServletResponse response) throws ServletException {
 		String name = null;
 		if (request.getParameter("name") != null && !request.getParameter("name").equals("")) {
@@ -263,6 +277,9 @@ public class BaseServlet extends HttpServlet {
 		}
 	}
 
+	/** 
+     * 显示公告
+     */  
 	public void findType(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String date = (String) request.getAttribute("date");
@@ -298,11 +315,13 @@ public class BaseServlet extends HttpServlet {
 		}
 		request.getSession().setAttribute("list2", list2);
 		request.getSession().setAttribute("list1", list1);
-		response.setHeader("refresh", "0,URL=index.jsp");
+		response.setHeader("refresh", "1,URL=index.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 
-	// 处理查询所有商品的请求
+	/** 
+     * 处理查询所有商品的请求
+     */  
 	public void findAll(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ProductService ps = new ProductService();
 		List<Goods> list = ps.findAll();
@@ -317,6 +336,9 @@ public class BaseServlet extends HttpServlet {
 		request.getRequestDispatcher("product.jsp").forward(request, response);
 	}
 
+	/** 
+     * 处理分类查询的请求
+     */  
 	public void queryType(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		int pageCode = 1;
@@ -337,6 +359,9 @@ public class BaseServlet extends HttpServlet {
 		request.getRequestDispatcher("product.jsp").forward(request, response);
 	}
 
+	/** 
+     * 处理查询打折商品的请求
+     */  
 	public void queryBarterType(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		int pageCode = 1;

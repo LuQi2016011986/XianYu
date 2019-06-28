@@ -2,6 +2,9 @@ package entity;
 
 import java.util.Date;
 
+/** 
+ *  用户类
+ */   
 public class Users {
 	private String userId;// 东师邮箱号
 	private String userName;// 注册用户名

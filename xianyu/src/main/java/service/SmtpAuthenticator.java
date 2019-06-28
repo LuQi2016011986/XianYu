@@ -3,6 +3,9 @@ package service;
 import javax.mail.Authenticator;
 import javax.mail.PasswordAuthentication;
 
+/** 
+ *  配置用户名和密码
+ */   
 public class SmtpAuthenticator extends Authenticator {
 	private String username;
 	private String password;

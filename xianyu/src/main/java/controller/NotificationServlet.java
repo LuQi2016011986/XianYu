@@ -98,6 +98,9 @@ public class NotificationServlet extends HttpServlet {
 	 *             if an error occurs
 	 */
 
+	/** 
+     * 发布公告
+     */  
 	public static void addNotification(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException {
 		String id = UUID.randomUUID().toString().replaceAll("-", "");
@@ -126,6 +129,9 @@ public class NotificationServlet extends HttpServlet {
 		}
 	}
 
+	/** 
+     * 删除公告
+     */  
 	public static void delNotification(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException {
 		String id = null;
@@ -142,6 +148,9 @@ public class NotificationServlet extends HttpServlet {
 		}
 	}
 
+	/** 
+     * 阅读公告
+     */  
 	public static void readNotification(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String id = null;
@@ -168,6 +177,9 @@ public class NotificationServlet extends HttpServlet {
 
 	}
 
+	/** 
+     * 更新公告
+     */  
 	public static void updateNotification(HttpServletRequest request, HttpServletResponse response) {
 		String id = null;
 		if (request.getParameter("id") != null && !request.getParameter("id").equals("")) {

@@ -1,5 +1,8 @@
 package entity;
 
+/** 
+ *  商品类
+ */   
 public class Goods {
 	public String goodsId;
 	public String userName;

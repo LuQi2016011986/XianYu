@@ -2,6 +2,9 @@ package entity;
 
 import java.util.Date;
 //公告类
+/** 
+ *  公告类
+ */   
 public class Notification {
 	private String id;
 	private String notification;//公告内容

@@ -57,44 +57,37 @@ public class AllServlet extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html;charset=utf-8");
 		String flag = request.getParameter("flag");
-		if ("upload".equals(flag)) {
-			// 上传图片
+		switch (flag) {
+		case "upload":// 上传图片
 			upload(request, response);
 			// System.out.println(imageurl);
-
-		} else if ("addgood".equals(flag)) {
-			// 发布商品
+			break;
+		case "addgood":// 发布商品
 			addgood(request, response);
-
-		} else if ("addorder".equals(flag)) {
-			// 生成订单
+			break;
+		case "addorder":// 生成订单
 			addorder(request, response);
-
-		} else if ("comorder".equals(flag)) {
-			// 完成订单
+			break;
+		case "comorder":// 完成订单
 			comorder(request, response);
-
-		} else if ("delorder".equals(flag)) {
-			// 取消订单
+			break;
+		case "delorder":// 取消订单
 			delorder(request, response);
-
-		} else if ("myorder".equals(flag)) {
-			// 我的订单列表
+			break;
+		case "myorder":// 我的订单列表
 			myorder(request, response);
-
-		} else if ("mypeople".equals(flag)) {
-			// 我的消息联系人查询
+			break;
+		case "mypeople":// 我的消息联系人查询
 			mypeople(request, response);
-
-		} else if ("sendmail".equals(flag)) {
-			// 发送邮件
+			break;
+		case "sendmail":// 发送邮件
 			try {
 				sendmail(request, response);
 			} catch (MessagingException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-
+			break;
 		}
 	}
 
@@ -107,7 +100,11 @@ public class AllServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
-
+	
+	
+	/** 
+     * 多图上传 
+     */  
 	public static void upload(HttpServletRequest request, HttpServletResponse response) {
 		// System.out.println("收到图片!");
 		String fileName = null;
@@ -148,6 +145,9 @@ public class AllServlet extends HttpServlet {
 		// System.out.println("接收完毕");
 	}
 
+	/** 
+     * 添加商品 
+     */  
 	public static void addgood(HttpServletRequest request, HttpServletResponse response) {
 		Goods g = new Goods();
 		g.setUserName(request.getSession().getAttribute("name").toString());
@@ -195,7 +195,10 @@ public class AllServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 	}
-
+	
+	/** 
+     * 添加订单
+     */  
 	public static void addorder(HttpServletRequest request, HttpServletResponse response) {
 		Order o = new Order();
 		if (request.getParameter("goodsId") != null && !request.getParameter("goodsId").equals("")) {
@@ -220,7 +223,11 @@ public class AllServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 	}
-
+	
+	
+	/** 
+     * 完成订单操作
+     */  
 	public static void comorder(HttpServletRequest request, HttpServletResponse response) {// 完成订单操作
 		Order o = new Order();
 		int score = 5;
@@ -275,14 +282,17 @@ public class AllServlet extends HttpServlet {
 		}
 	}
 
+	/** 
+     * 我的订单页面
+     */  
 	public static void myorder(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {// 我的订单页面
 		String userName = request.getSession().getAttribute("name").toString();
 		GoodService s = new GoodService();
 		List<Order> list1 = s.selectnow(userName);
 		List<Order> list2 = s.selectcom(userName);
-		List<Goods> list3 = new ArrayList<Goods>();
-		List<Goods> list4 = new ArrayList<Goods>();
+		List<Goods> list3 = new ArrayList<>();
+		List<Goods> list4 = new ArrayList<>();
 		for (int i = 0; i < list1.size(); i++) {
 			try {
 				list3.add(s.query(list1.get(i).getGoodId()));
@@ -309,6 +319,9 @@ public class AllServlet extends HttpServlet {
 
 	}
 
+	/** 
+     * 取消订单
+     */  
 	public static void delorder(HttpServletRequest request, HttpServletResponse response) {// 取消订单
 		Order o = new Order();
 		if (request.getParameter("orderId") != null && !request.getParameter("orderId").equals("")) {
@@ -331,6 +344,9 @@ public class AllServlet extends HttpServlet {
 		}
 	}
 
+	/** 
+     * 发送邮件
+     */  
 	@SuppressWarnings("resource")
 	public static void sendmail(HttpServletRequest request, HttpServletResponse response) throws MessagingException {// 发送邮件
 		String receiveMailAccount = "1191235915@qq.com";
@@ -357,6 +373,9 @@ public class AllServlet extends HttpServlet {
 
 	}
 
+	/** 
+     * 查询联系人
+     */  
 	public static void mypeople(HttpServletRequest request, HttpServletResponse response) {// 查询联系人
 		GoodService s = new GoodService();
 		String name = request.getSession().getAttribute("name").toString();

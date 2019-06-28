@@ -1,5 +1,8 @@
 package entity;
 //管理员类
+/** 
+ *  管理员类
+ */   
 public class Administrator {
 	private String administratorId;
 	private String name;

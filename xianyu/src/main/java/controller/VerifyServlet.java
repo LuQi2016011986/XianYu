@@ -64,6 +64,9 @@ public class VerifyServlet extends HttpServlet {
 
 	}
 
+	/** 
+     * 模拟登陆认证
+     */ 
 	public static void verify(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		String nenuName = request.getParameter("nenuName");
 		String nenuPwd = request.getParameter("nenuPwd");
@@ -100,6 +103,9 @@ public class VerifyServlet extends HttpServlet {
 		}
 	}
 
+	/** 
+     * 查看用户是否为于黑名单
+     */ 
 	@SuppressWarnings("null")
 	public static void ifBlack(HttpServletRequest request, HttpServletResponse response) throws ServletException {
 		String nenuName = null;

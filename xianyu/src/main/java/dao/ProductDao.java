@@ -25,8 +25,6 @@ public class ProductDao {
 	/**
 	 * 添加商品
 	 *
-	 * @param
-	 * @throws SQLException
 	 */
 	public void insertComment(Message m) throws Exception {
 		Connection connection = JDBCUtil.getConnection();
@@ -34,7 +32,10 @@ public class ProductDao {
 		qr.update(connection, sql, m.getId(), m.getContent(), m.getInitiatorName(), m.getRecipientName(), m.getDate());
 	}
 
-	// 查询所有商品
+	/**
+	 * 查询所有商品
+	 *
+	 */ 
 	public List<Goods> findAll() throws SQLException {
 		String sql = "select * from goods where state=0";
 		List<Goods> list = qr.query(sql, new BeanListHandler<Goods>(Goods.class));
@@ -53,7 +54,10 @@ public class ProductDao {
 		return list1;
 	}
 
-	// 根据id查找商品
+	/**
+	 * 根据id查找商品
+	 *
+	 */ 
 	public List<Goods> findProductById(String id) throws SQLException {
 		String sql = "select * from goods where goodsId=?";
 		List<Goods> list3 = qr.query(sql, new BeanListHandler<Goods>(Goods.class), id);
@@ -76,7 +80,7 @@ public class ProductDao {
 	 * 查询总记录数
 	 *
 	 * @throws SQLException
-	 *
+	 * @return
 	 */
 	public int queryTotalRecord() throws SQLException {
 		String sql = "select count(*) from goods";

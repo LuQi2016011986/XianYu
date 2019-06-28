@@ -8,7 +8,7 @@
 	<!-- 邮件认证实现 -->
 	<bean id="smtpAuthenticator" class="service.SmtpAuthenticator">
 		<constructor-arg value="1191235915@qq.com"></constructor-arg>
-		<constructor-arg value="yodftgyrigfcibde"></constructor-arg>
+		<constructor-arg value="ptmlejjndnncgeee"></constructor-arg>
 	</bean>
 	<!-- 邮件 mailSession -->
 	<bean id="mailSession" class="javax.mail.Session" factory-method="getInstance">

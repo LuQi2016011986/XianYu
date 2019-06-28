@@ -60,7 +60,7 @@
 	<!--//main-->
 	<!--footer-->
 	<div class="footer">
-		<p>&copy; 2018 软件工程导论 · 校内闲鱼制作组制作</p>
+		<p>&copy; 2019 软件质量保证与测试 · 校内闲鱼制作组制作</p>
 	</div>
 	<!--//footer-->
 </body>
